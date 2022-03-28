@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@300&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/onedark-darker.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h1>Bitcoin Custody</h1>
+                </section>
+                <section>
+                    <h2>Where are the coins?</h2>
+                        <ul>
+                        <li>Coins are <span class="red-text">not</span> stored locally in a wallet</li>
+                        <li><span class="green-text">A wallet is just a collection of private keys</span></li>
+                            <li>Coins locked from unauthorised spending using cryptographic keys or puzzles (scripts)</li>
+                            <li>The lock for every coin recorded on the blockchain</li>
+                            <li>Need private key to unlock and authorise spending coins</li>
+                        </ul>
+                </section>
+                <section>
+                    <h2>Wallet device vs wallet software</h2>
+                        <ul>
+                            <li>Wallet device</li>
+                            <ol>
+                                <li>Stores private keys</li>
+                                <li>Signs valid transactions</li>
+                                <li>Also called "signer" or "keystore"</li>
+                            </ol>
+                            <li>Wallet software</li>
+                            <ol>
+                                <li>Constructs unsigned transactions</li>
+                                <li>Broadcasts signed transactions</li>
+                                <li>Has a nice UI</li>
+                            </ol>
+                        </ul>
+                </section>
+                <section>
+                    <h2>Security and privacy</h2>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Private</th>
+                            <th>Not Private</th>
+                        </tr>
+                        <tr>
+                            <th>Secure</th>
+                            <td><span class="green-text">&#10003;</span></td>
+                            <td><span class="orange-text">~</span></td>
+                        </tr>
+                        <tr>
+                            <th>Insecure</th>
+                            <td><span class="red-text">&#10005;</span></td>
+                            <td><span class="red-text">&#10005;</span></td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <h2>Not your keys, not your coins</h2>
+                    <ul>
+                        <li>Important mentality</li>
+                        <li>If you do control the private keys, they're your bitcoin</li>
+                        <li>If you <span class="red-text">don't</span> control the private keys, they're <span class="red-text">not</span> your bitcoin</li>
+                        <li>Do you control your keys?</li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <th>Written down seed words</th>
+                            <th><span class="green-text">Yes</span></th>
+                        </tr>
+                        <tr>
+                            <th>Log into online account</th>
+                            <th><span class="red-text">No</span></th>
+                        </tr>
+                        <tr>
+                            <th>Other</th>
+                            <th><span class="orange-text">Maybe</span></th>
+                        </tr>
+                    </table>
+                </section>
+                    <section>
+                    <h1><span class="red-text">NOT YOUR KEYS<br>NOT YOUR COINS</span></h1>
+                </section>
+                <section>
+                    <h2>Key backups: seed words</h2>
+                    <ul>
+                        <li>Usually 12 or 24 words</li>
+                        <li>Used to generate your keys <u>deterministically</u> (BIP44, BIP49, BIP94)</li>
+                        <li>Can re-create your wallet at any time using seed words</li>
+                        <ul>
+                            <li>e.g. lost wallet/phone/computer</li>
+                        </ul>
+                        <li>Usually prompted to backup at initial setup of wallet software</li>
+                        <ul>
+                            <li>If you skipped this during setup, do it now</li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Key backups: seed words</h2>
+                    <ul>
+                        <li>Don't compromise your backup:</li>
+                        <ul>
+                            <li>Don't let others get hold of it</li>
+                            <li>Don't outsmart your future self e.g. splitting up the words or encrypting them with a custom cypher</li>
+                        </ul>
+                    </ul>
+                    <h4><span class="red-text">If you control your keys, you're responsible if you lose them and have no backup!</span></h4>
+                </section>
+                <section>
+                    <h2>Seed backups</h2>
+                    <ul>
+                        <li>Electronic document/file/google doc/iCloud/dropbox <span class="red-text">&xlarr; Bad</span></li>
+                        <li>Paper <span class="orange-text">&xlarr; OK</span></li>
+                        <li>Metal <span class="green-text">&xlarr; Good</span></li>
+                    </ul>
+                    <br>
+                    <ul>
+                        <li>Don't share</li>
+                        <li>Passphrase can be used to protect seed</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Key storage devices</h2>
+                    <table>
+                        <tr>
+                            <th><span class="purple-text">Type</span></th>
+                            <th><span class="purple-text">Attack surface</span></th>
+                        </tr>
+                        <tr>
+                            <td>Computer</td>
+                            <td>Largest</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>Reduced</td>
+                        </tr>
+                        <tr>
+                            <td>Hardware wallet</td>
+                            <td>Smallest</td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <h2>Hardware wallet devices</h2>
+                    <img src="https://cdn.shopify.com/s/files/1/2974/4858/products/01_4f10d168-302a-47b3-b79f-e0a6b6da7a48.png?v=1644216184" alt="" style="width:150px;height:150px;">
+                    <ul>
+                        <li>Most secure</li>
+                        <ul>
+                            <li>Private keys physically separated from all network connections</li>
+                            <li>Single function + focus on security</li>
+                        </ul>
+                        <li>Ideally buy from manufacturer or authorised re-seller</li>
+                        <li>Verify authenticity using instructions</li>
+                        <li>Will never come with "preloaded" seed words!</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Wallet software privacy</h2>
+                    <ul>
+                        <li>Wallet <span class="purple-text">software</span> needs blockchain data</li>
+                        <ul>
+                            <li>Learn about new transactions related to its keys</li>
+                            <li>Lookup current fee rates</li>
+                            <li>Broadcast transactions</li>
+                            <li>Calculate balance</li>
+                        </ul>
+                    </ul>
+                    <p>Where can we get this data from?</p>
+                </section>
+                <section>
+                    <h2>Wallet software privacy</h2>
+                    <table>
+                        <tr>
+                            <th colspan="2"><span class="orange-text">Public sources</span></th>
+                            <th colspan="2"><span class="green-text">Private sources</span></th>
+                        </tr>
+                        <tr>
+                            <td><span class="orange-text">Wallet software provider</span></td>
+                            <td><span class="orange-text">Electrum server {HTTPS | Tor}</span></td>
+                            <td><span class="green-text">Electrum server</span></td>
+                            <td><span class="green-text">Bitcoin Core</span></td>
+                        </tr>
+                        <tr>
+                            <td>Poor</td>
+                            <td>{Low | OK}</td>
+                            <td>Best</td>
+                            <td>Best</td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <h2>Computer wallet software</h2>
+                    <ul>
+                        <li><a href="https://specter.solutions/downloads/">Specter-desktop</a> (requires Bitcoin Core)</li>
+                        <li><a href="https://sparrowwallet.com/">Sparrow wallet</a> (requires Bitcoin Core)</li>
+                        <li><a href="https://bitcoin.org/en/bitcoin-core/">Bitcoin Core</a> + <a href="https://github.com/bitcoin-core/HWI">HWI</a></li>
+                        <li><a href="https://electrum.org/#home">Electrum</a></li>
+                        <li><a href="https://blockstream.com/green/">Blockstream Green</a> (only Jade HWW support)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Phone wallet software</h2>
+                    <ul>
+                        <li>Android</li>
+                        <ul>
+                            <li><a href="https://samouraiwallet.com/">Samourai wallet</a></li>
+                            <li><a href="https://bluewallet.io/">Bluewallet</a></li>
+                            <li><a href="https://blockstream.com/green/">Blockstream Green</a></li>
+                        </ul>
+                        <li>iOS</li>
+                        <ul>
+                            <li><a href="https://blockstream.com/green/">Blockstream Green</a></li>
+                            <li><a href="https://bluewallet.io/">Bluewallet</a></li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Takeaways</h2>
+                    <ol>
+                        <li>Hardware wallets provide best key security</li>
+                        <li>Using your own full node or electrum server provides best privacy</li>
+                        <ol type="i">
+                            <li>A public electrum server over Tor is also good</li>
+                        </ol>
+                        <li>Don't store valuable private keys on an internet-connected device</li>
+                        <li>Wallet software can be installed on computer or phone</li>
+                        <li>Small/test amounts on a phone wallet is fine</li>
+                        <li>Meaningful amounts, hardware wallet recommended</li>
+                        <li>Don't neglect seed backup</li>
+                    </ol>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
