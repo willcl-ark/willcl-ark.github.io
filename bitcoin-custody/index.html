@@ -21,6 +21,8 @@
 		<div class="reveal">
 			<div class="slides">
                 <section>
+                    <img src="images/wallet.png" alt="" style="width:100px;height:100px;">
+                    <p>Qala</p>
                     <h1>Bitcoin Custody</h1>
                 </section>
                 <section>
@@ -78,7 +80,7 @@
                         <li>If you <span class="red-text">don't</span> control the private keys, they're <span class="red-text">not</span> your bitcoin</li>
                         <li>Do you control your keys?</li>
                     </ul>
-                    <table>
+                    <table class="buffer">
                         <tr>
                             <th>Written down seed words</th>
                             <th><span class="green-text">Yes</span></th>
@@ -120,20 +122,21 @@
                             <li>Don't outsmart your future self e.g. splitting up the words or encrypting them with a custom cypher</li>
                         </ul>
                     </ul>
-                    <h4><span class="red-text">If you control your keys, you're responsible if you lose them and have no backup!</span></h4>
+                    <p class="red-text buffer left-aligned">If you control your keys, you're responsible if you lose them and have no backup!</p>
                 </section>
                 <section>
                     <h2>Seed backups</h2>
-                    <ul>
-                        <li>Electronic document/file/google doc/iCloud/dropbox <span class="red-text">&xlarr; Bad</span></li>
-                        <li>Paper <span class="orange-text">&xlarr; OK</span></li>
-                        <li>Metal <span class="green-text">&xlarr; Good</span></li>
-                    </ul>
-                    <br>
-                    <ul>
-                        <li>Don't share</li>
-                        <li>Passphrase can be used to protect seed</li>
-                    </ul>
+                    <div class="left-aligned">
+                        <ul>
+                            <li>Electronic document/file/google doc/iCloud/dropbox <span class="red-text">&xlarr; Bad</span></li>
+                            <li>Paper <span class="orange-text">&xlarr; OK</span></li>
+                            <li>Metal <span class="green-text">&xlarr; Good</span></li>
+                        </ul>
+                        <ul class="buffer">
+                            <li>Don't share</li>
+                            <li>Passphrase can be used to protect seed</li>
+                        </ul>
+                    </div>
                 </section>
                 <section>
                     <h2>Key storage devices</h2>
@@ -172,16 +175,18 @@
                 </section>
                 <section>
                     <h2>Wallet software privacy</h2>
-                    <ul>
-                        <li>Wallet <span class="purple-text">software</span> needs blockchain data</li>
+                    <div class="left-aligned">
                         <ul>
-                            <li>Learn about new transactions related to its keys</li>
-                            <li>Lookup current fee rates</li>
-                            <li>Broadcast transactions</li>
-                            <li>Calculate balance</li>
+                            <li>Wallet <span class="purple-text">software</span> often needs blockchain data</li>
+                            <ul>
+                                <li>Learn about new transactions related to its keys</li>
+                                <li>Lookup current fee rates</li>
+                                <li>Broadcast transactions</li>
+                                <li>Calculate balance</li>
+                            </ul>
                         </ul>
-                    </ul>
-                    <p>Where can we get this data from?</p>
+                        <p>Where can we get this data from?</p>
+                    </div>
                 </section>
                 <section>
                     <h2>Wallet software privacy</h2>
